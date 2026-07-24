@@ -264,13 +264,6 @@ https://github.com/KylixXD/meu-projeto-docker/actions/runs/30098427003/job/89498
 # 8. Dificuldades e aprendizados
 
 Escreva entre 3 e 5 linhas descrevendo:
-
-- O que foi mais difícil.
-- Como resolveu os problemas.
-- O que aprendeu sobre Docker.
-- O que aprendeu sobre Docker Compose.
-- O que aprendeu sobre GitHub Actions.
-
 Tive dificuldades em criar as primeiras imagens (principalmente por ser uma build Multi-Stage) por de fato não saber como fazer isso de cabeça e admito que usei IA para me auxiliar, uma outra dificuldade que eu passei foi na criação do própio Docker Compose (é algo que eu estou tentando aprender) e na permissões de usuário. Os erros que eu tive no CI.yml foram mais erro de escritas e de indentação, então foram fáceis de corrigir. Para superar essas dificuldades eu pesquisei os erros e utilizei a IA como ferramenta para entender o error e o corrigir. Com esse projeto eu aprendi muitas coisas sobre o Docker que eu não sabia(build Multi-Stage),  e vi que realmente Docker é um ferramenta muito potente quando usada de maneira correta. Sobre o GitHub Actions eu não conhecia e não sabia que era tão "Simples" fazer essa automação. Foi um projeto muito bom para me agregar conhecimento.
 
 ---
