@@ -1,9 +1,4 @@
 # Atividade Docker + CI — Rafael Nóbrega
-
-Preencha todos os campos marcados com `[ ... ]` e substitua os prints de exemplo pelos seus.
-
-> Salve as imagens em `docs/imagens/` e mantenha os nomes de arquivo indicados.
-
 ---
 
 ## Informações
@@ -236,26 +231,27 @@ O arquivo `.env.example` serve como modelo.
 
 ### O que foi alterado?
 
-> Quando estava escrevendo o CI.yml eu acabei colocando um espaço entre $ e o ( no comando $(seq 1 30)  
+> Acabei colando um espaço sem querer entre o `$` e o `(` no comando `$(seq 1 30)` do workflow do GitHub Actions.
 
 ### Erro apresentado
 
 ```
-[Cole aqui a mensagem do erro.]
+Run for i in $ (seq 1 30); do
+syntax error near unexpected token '('
 ```
 
 ### Como o CI reagiu?
 
-> [Explique em qual etapa falhou.]
+> O pipeline falhou na etapa "Aguardar a aplicação responder", pois o script Bash apresentou erro de sintaxe e foi interrompido antes da execução.
 
 ### Como foi corrigido?
 
-> [Explique.]
+> Como foi um erro besta apenas removi o espaço entre $ e (, alterando $(seq 1 30) para a sintaxe correta.
 
 ### Link do Pull Request
 
 ```
-[URL]
+https://github.com/KylixXD/meu-projeto-docker/actions/runs/30098427003/job/89498144697
 ```
 
 ### Print 9 — Execução vermelha
@@ -267,27 +263,22 @@ O arquivo `.env.example` serve como modelo.
 
 # 8. Dificuldades e aprendizados
 
-Escreva entre 3 e 5 linhas descrevendo:
-
-- O que foi mais difícil.
-- Como resolveu os problemas.
-- O que aprendeu sobre Docker.
-- O que aprendeu sobre Docker Compose.
-- O que aprendeu sobre GitHub Actions.
+Tive dificuldades em criar as primeiras imagens (principalmente por ser uma build Multi-Stage) por de fato não saber como fazer isso de cabeça e admito que usei IA para me auxiliar, uma outra dificuldade que eu passei foi na criação do própio Docker Compose (é algo que eu estou tentando aprender) e na permissões de usuário. Os erros que eu tive no CI.yml foram mais erro de escritas e de indentação, então foram fáceis de corrigir. Para superar essas dificuldades eu pesquisei os erros e utilizei a IA como ferramenta para entender o error e o corrigir. Com esse projeto eu aprendi muitas coisas sobre o Docker que eu não sabia(build Multi-Stage),  e vi que realmente Docker é um ferramenta muito potente quando usada de maneira correta. Sobre o GitHub Actions eu não conhecia e não sabia que era tão "Simples" fazer essa automação. Foi um projeto muito bom para me agregar conhecimento.
 
 ---
 
 # 9. Checklist
 
-- [ ] Dockerfile Multi-Stage funcionando
-- [ ] `.dockerignore` presente
-- [ ] Container não roda como root
-- [ ] Volume nomeado com persistência demonstrada
-- [ ] Rede nomeada
-- [ ] Banco não exposto ao host
-- [ ] `compose.yaml` sobe tudo com um comando
-- [ ] `.env` no `.gitignore`
-- [ ] `.env.example` versionado
-- [ ] CI funcionando (verde)
-- [ ] Pull Request com CI vermelho documentado
-- [ ] Todos os 9 prints adicionados ao README
+- [X] Dockerfile Multi-Stage funcionando
+- [X] `.dockerignore` presente
+- [X] Container não roda como root
+- [X] Volume nomeado com persistência demonstrada
+- [X] Rede nomeada
+- [X] Banco não exposto ao host
+- [X] `compose.yaml` sobe tudo com um comando
+- [X] `.env` no `.gitignore`
+- [X] `.env.example` versionado
+- [X] CI funcionando (verde)
+- [X] Pull Request com CI vermelho documentado
+- [X] Todos os 9 prints adicionados ao README
+
