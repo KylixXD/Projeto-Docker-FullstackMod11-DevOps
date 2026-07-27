@@ -267,6 +267,80 @@ Tive dificuldades em criar as primeiras imagens (principalmente por ser uma buil
 
 ---
 
+# CD — Publicação no Docker Hub
+
+**Aluno(a):** Rafael Nóbrega de Lima  
+**Turma:** Noturna  
+
+**Usuário do Docker Hub:** kylixxd
+  
+**Imagem publicada:**  
+`kylixxd/meu-projeto-docker:latest`
+
+**Link da imagem no Docker Hub:**  
+[[Imagem no Docker Hub](https://hub.docker.com/repository/docker/kylixxd/meu-projeto-docker/general)]
+
+**Dispara quando:** `push` na branch `master`
+
+**Arquivo do workflow:**  
+`.github/workflows/cd.yml`
+
+---
+
+## Evidências
+
+### Print 1 — Token criado no Docker Hub
+![Token Docker Hub](docs/imagens/14-token-criado.png)
+
+---
+
+### Print 2 — Secrets cadastrados no GitHub (`DOCKERHUB_USERNAME` e `DOCKERHUB_TOKEN`)
+![Secrets GitHub](docs/imagens/15-secrets-cadastrados.png)
+
+---
+
+### Print 3 — Workflow de CD executado com sucesso na aba Actions
+![Workflow Actions](docs/imagens/16-workflow-cd-sucedido.png)
+
+---
+
+### Print 4 — Imagem publicada no Docker Hub
+![Imagem Docker Hub](docs/imagens/17-imagem-publicada-dockerhub.png)
+
+---
+
+### Print 5 — Comando `docker pull` baixando a imagem publicada
+![Docker Pull](docs/imagens/18-download-imagem.png)
+![Imagem Baixada](docs/imagens/19-imagem-baixada.png)
+
+---
+
+# Respostas
+
+## 1. O que é o Docker Hub?
+
+> É um serviço de armazenamento e distribuição comunitário de várias imagens em nuvem. Basicamente um repositório de imagens para o docker.
+
+---
+
+## 2. Qual a diferença entre CI e CD?
+
+> **CI (Continuous Integration)** é a Integração Contínua, que automatiza a compilação, os testes e a validação do código sempre que uma alteração é enviada ao repositório. Seu objetivo é identificar problemas rapidamente e manter o código sempre integrado.
+
+**CD (Continuous Delivery/Continuous Deployment)** é a Entrega ou Implantação Contínua. Após a etapa de CI, o CD automatiza a publicação da aplicação ou de suas imagens, como o envio de uma imagem Docker para o Docker Hub ou até mesmo a implantação em um servidor.
+
+---
+
+## 3. Por que usar token e GitHub Secrets em vez de escrever usuário e senha no `cd.yml`?
+
+> Pois é a maneira mais segura de evitar vazamento de dados, nunca é uma boa ideia colocar dados sensiveis diretamente no código e se for colocar coloque através de váriaveis de ambiente ou usando o github Secrets que só será disponibilizado durante a execução do cd.yml.
+
+---
+
+## 4. O que significa a tag `latest`?
+
+> Essa tag "latest" indica a versão mais recente de uma imagem Docker. Caso o Docker pull for executado sem nenhuma tag, será automaticamente baixada a versão "latest".
+
 # 9. Checklist
 
 - [X] Dockerfile Multi-Stage funcionando
@@ -281,4 +355,6 @@ Tive dificuldades em criar as primeiras imagens (principalmente por ser uma buil
 - [X] CI funcionando (verde)
 - [X] Pull Request com CI vermelho documentado
 - [X] Todos os 9 prints adicionados ao README
+
+
 
