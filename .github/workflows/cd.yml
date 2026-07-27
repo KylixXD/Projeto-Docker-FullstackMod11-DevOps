@@ -3,7 +3,7 @@ name: CD - Publicar no Docker Hub
 on:
   push:
     branches:
-      - "main"
+      - "master"
 
 jobs:
   publicar:
