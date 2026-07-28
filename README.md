@@ -13,8 +13,8 @@
 # 1. Como executar este projeto
 
 ```bash
-git clone https://github.com/KylixXD/meu-projeto-docker.git
-cd meu-projeto-docker
+git clone https://github.com/KylixXD/Projeto-Docker-FullstackMod11-DevOps.git
+cd Projeto-Docker-FullstackMod11-DevOps
 cp .env.example .env
 docker compose up -d --build
 ```
